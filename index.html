@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Конструктор визиток</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="workspace">
+    <form class="editor" id="editor">
+      <h1>Конструктор визиток</h1>
+
+      <div class="field">
+        <label class="field-label" for="organization">Наименование организации</label>
+        <input class="text-input" id="organization" name="organization" value='ООО "Ориентир"'>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="fullName">Фамилия, имя, отчество</label>
+        <div class="field-row">
+          <input class="text-input" id="fullName" name="fullName" value="Фёдоров Иван Семенович">
+          <div class="text-settings">
+            <div class="choices alignment" role="radiogroup" aria-label="Выравнивание ФИО">
+              <label><input type="radio" name="nameAlign" value="left" aria-label="По левому краю"></label>
+              <label><input type="radio" name="nameAlign" value="center" aria-label="По центру" checked></label>
+              <label><input type="radio" name="nameAlign" value="right" aria-label="По правому краю"></label>
+            </div>
+            <div class="choices sizes" role="radiogroup" aria-label="Размер ФИО">
+              <label><input type="radio" name="nameSize" value="24"><span>24px</span></label>
+              <label><input type="radio" name="nameSize" value="26" checked><span>26px</span></label>
+              <label><input type="radio" name="nameSize" value="28"><span>28px</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="choices colors" role="radiogroup" aria-label="Цвет ФИО">
+          <label><input type="radio" name="nameColor" value="#202020" aria-label="Чёрный" checked></label>
+          <label><input type="radio" name="nameColor" value="#4188ed" aria-label="Синий"></label>
+          <label><input type="radio" name="nameColor" value="#ed4057" aria-label="Красный"></label>
+          <label><input type="radio" name="nameColor" value="#078013" aria-label="Зелёный"></label>
+          <label><input type="radio" name="nameColor" value="#dfa400" aria-label="Золотой"></label>
+          <label><input type="radio" name="nameColor" value="#d900ce" aria-label="Пурпурный"></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="job">Должность</label>
+        <div class="field-row">
+          <input class="text-input" id="job" name="job" value="Менеджер по развитию">
+          <div class="text-settings">
+            <div class="choices alignment" role="radiogroup" aria-label="Выравнивание должности">
+              <label><input type="radio" name="jobAlign" value="left" aria-label="По левому краю"></label>
+              <label><input type="radio" name="jobAlign" value="center" aria-label="По центру" checked></label>
+              <label><input type="radio" name="jobAlign" value="right" aria-label="По правому краю"></label>
+            </div>
+            <div class="choices sizes" role="radiogroup" aria-label="Размер должности">
+              <label><input type="radio" name="jobSize" value="14"><span>14px</span></label>
+              <label><input type="radio" name="jobSize" value="16" checked><span>16px</span></label>
+              <label><input type="radio" name="jobSize" value="18"><span>18px</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="choices colors" role="radiogroup" aria-label="Цвет должности">
+          <label><input type="radio" name="jobColor" value="#464646" aria-label="Графитовый" checked></label>
+          <label><input type="radio" name="jobColor" value="#202020" aria-label="Чёрный"></label>
+          <label><input type="radio" name="jobColor" value="#646464" aria-label="Тёмно-серый"></label>
+          <label><input type="radio" name="jobColor" value="#a0a0a0" aria-label="Серый"></label>
+          <label><input type="radio" name="jobColor" value="#bcbcbc" aria-label="Светло-серый"></label>
+          <label><input type="radio" name="jobColor" value="#e4e4e4" aria-label="Серебристый"></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label" for="phone">Телефон</label>
+        <input class="text-input" type="tel" id="phone" name="phone" value="8 (999) 123-45-67">
+      </div>
+      <div class="field" id="extraPhoneField" hidden>
+        <label class="field-label" for="extraPhone">Дополнительный телефон</label>
+        <input class="text-input" type="tel" id="extraPhone" name="extraPhone">
+      </div>
+      <button class="phone-button" type="button" aria-controls="extraPhoneField" aria-expanded="false">Добавить еще один телефон</button>
+
+      <div class="field">
+        <label class="field-label" for="email">E-mail</label>
+        <div class="field-row">
+          <input class="text-input" type="email" id="email" name="email" value="fedorov.is@orientir.org">
+          <label class="visibility"><input type="checkbox" name="showEmail" aria-label="Отображать e-mail" checked>Отображать</label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label" for="address">Адрес</label>
+        <div class="field-row">
+          <input class="text-input" id="address" name="address" value="Иркутск, Байкальская, 421, оф. 12">
+          <label class="visibility"><input type="checkbox" name="showAddress" aria-label="Отображать адрес" checked>Отображать</label>
+        </div>
+      </div>
+      <button class="apply-button" type="button">Применить</button>
+    </form>
+
+    <div class="preview">
+      <div class="card">
+        <p class="card-company"></p>
+        <h2 class="card-name"></h2>
+        <p class="card-job"></p>
+        <div class="card-contacts"></div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
